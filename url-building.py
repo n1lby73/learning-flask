@@ -17,7 +17,7 @@ def homepage(linkedname):
     admins = ['n1lby73', 'stanley','stancylee']
 
     for access in admins:
-        
+
         if linkedname == access:
             return redirect(url_for('urlUser1'))
         else:
@@ -26,3 +26,6 @@ def homepage(linkedname):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3565)
+
+
+# note that while doing this your function parameter should be having the same variable as your route parameter
