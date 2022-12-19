@@ -18,3 +18,5 @@ def login():
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0',port=3565)
+
+# pc going off, have to pause here for today
