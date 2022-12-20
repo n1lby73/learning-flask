@@ -13,7 +13,7 @@
 <body>
     <header class="showcase">
         <div class="showcase-top">
-            <img src="img/logo1.png" alt="Netflix">
+            <img src="{{ url_for('static', filename='logo1.png')}}" alt="Netflix">
             <a href="#" class="btn btn-rounded">Sign In</a>
         </div>
         <div class="showcase-content">
@@ -59,7 +59,7 @@
                             WATCH FREE FOR 30 DAYS
                         </a>
                     </div>
-                    <img src="img/tab-content-2-1.png" alt="" />
+                    <img src="{{ url_for('static', filename = 'tab-content-2-1.png')}}" alt="" />
                 </div>
             </div>
             <!--TAB CONTENT 2-->
@@ -72,21 +72,21 @@
                 </div>
                 <div class="tab-2-content-bottom">
                     <div>
-                        <img src="img/netflix.png" alt="">
+                        <img src="{{ url_for('static', filename ='netflix.png')}}" alt="">
                         <p class="text-md">Watch on your TV</p>
                         <p class="text-dark">Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-Ray
                             players and more.
                         </p>
                     </div>
                     <div>
-                        <img src="img/netflix2.jpg" alt="">
+                        <img src="{{ url_for('static', filename ='netflix2.jpg')}}" alt="">
                         <p class="text-md">Watch instantly or download for later</p>
                         <p class="text-dark">
                             Available on phone and tablet, wherever you go.
                         </p>
                     </div>
                     <div>
-                        <img src="img/tab-content-2-1.png" alt="">
+                        <img src="{{ url_for('static', filename ='tab-content-2-1.png')}}" alt="">
                         <p class="text-md">Use any computer</p>
                         <p class="text-dark">
                             Watch right on Netflix.com
@@ -200,7 +200,7 @@
             </ul>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename ='main.js')}}"></script>
 </body>
 
 </html>
