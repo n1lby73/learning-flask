@@ -1,0 +1,1 @@
+Credits of netflix landing page goes to [adarachel](github.com/adarachel)
