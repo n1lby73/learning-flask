@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            messageFlashing.py
+        </title>
+    </head>
+
+    <body>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+       <p>Welcome back admin</p>
+       <p>click here to <a href="logout" target="_blank">log out</a></p>
+    </body>
+</html>
