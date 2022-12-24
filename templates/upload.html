@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            file upload using flask
+        </title>
+    </head>
+
+    <body>
+
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+
+            <p><i>upload your profile picture below</i></p>
+            
+            <input type="file" name="profilePicture" method="post"/>
+
+            <br> <br> <input type="submit" value="upload">
+
+        </form>
+    </body>
+</html>
