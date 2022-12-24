@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 app.config['upload_folder'] = 'uploads'
+app.config['MAX_CONTENT_LENGTH'] = 10* 1024 * 1024
 
 # @app.route('/')
 # def index():
