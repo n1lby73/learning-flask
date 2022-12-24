@@ -10,7 +10,10 @@ def index():
 @app.route('/confirm', methods = ['POST', 'GET'])
 def confirm():
     if request.method == 'POST':
-        return '<p>Click here to <a href="upload" target="_blank">upload a profile picture</a>'
+        if request.form['username'] != "" and request.form['password'] != "":
+            return '<p>Click here to <a href="upload" target="_blank">upload a profile picture</a>'
+
+    return redirect(url_for('index'))
     
 @app.route('/upload')
 def upload():       
