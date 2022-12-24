@@ -6,15 +6,6 @@ app = Flask(__name__)
 app.config['upload_folder'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 10* 1024 * 1024
 
-# @app.route('/')
-# def index():
-#     return render_template('login.html')
-
-# @app.route('/confirm', methods = ['POST', 'GET'])
-# def confirm():
-#     if request.method == 'POST':
-#         return '<p>Click here to <a href="upload" target="_blank">upload a profile picture</a>'
-
 @app.route('/')
 def index():
     return '<p>Click here to <a href="upload" target="_blank">upload a profile picture</a>'
