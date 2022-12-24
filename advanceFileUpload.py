@@ -1,5 +1,6 @@
 from flask import *
 from werkzeug.utils import secure_filename
+from werkzeug.exceptions import RequestEntityTooLarge
 import os
 
 app = Flask(__name__)
@@ -18,16 +19,23 @@ def upload():
 def uploader():
     if request.method == 'POST':
 
-        file = request.files['profilePicture']
+        try:
 
-        if file:
-            file.save(os.path.join(
+            file = request.files['profilePicture']
 
-                app.config['upload_folder'], secure_filename(file.filename)
-                
-                ))
+            if file:
+                file.save(os.path.join(
 
-            return render_template('uploaded.html')
+                    app.config['upload_folder'], secure_filename(file.filename)
+                    
+                    ))
+
+                return render_template('uploaded.html')
+
+        except RequestEntityTooLarge:
+
+            return 'file size is more than 10mb \
+            <a href="upload" target="_blank">try again</a>'
 
     return render_template('upload.html')
 
