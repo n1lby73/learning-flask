@@ -7,7 +7,18 @@
     <title>your uploaded file</title>
 </head>
 <body>
-    <p>file uploaded successfully</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+
+                {{ message }}
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
     <p>upload more pictures <a href='/upload'>here</a></p>
 </body>
 </html>

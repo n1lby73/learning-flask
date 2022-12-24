@@ -4,13 +4,14 @@ from werkzeug.exceptions import RequestEntityTooLarge
 import os
 
 app = Flask(__name__)
+app.secret_key = 'bfvwgcUYUGYF YF@#$%^&*(64319[]\pp[]{}:'.encode('utf8')
 app.config['upload_folder'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 10* 1024 * 1024
 app.config['ALLOWED_EXTENSIONS'] = ['.jpg','.jpeg','.png']
 
 @app.route('/')
 def index():
-    return '<p>Click here to <a href="upload" target="_blank">upload a profile picture</a>'
+    return render_template('uploaded.html')
     
 @app.route('/upload')
 def upload():       
@@ -37,7 +38,7 @@ def uploader():
                     app.config['upload_folder'], secure_filename(file.filename)
                     
                     ))
-
+                flash ('uploaded succesfully')
                 return render_template('uploaded.html')
 
         except RequestEntityTooLarge:
