@@ -34,7 +34,7 @@ def uploader():
 
         except RequestEntityTooLarge:
 
-            return 'file size is more than 10mb \
+            return 'file size is more than 10MB limit \
             <a href="upload" target="_blank">try again</a>'
 
     return render_template('upload.html')
