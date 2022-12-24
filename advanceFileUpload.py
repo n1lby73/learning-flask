@@ -6,6 +6,7 @@ import os
 app = Flask(__name__)
 app.config['upload_folder'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 10* 1024 * 1024
+app.config['ALLOWED_EXTENSIONS'] = ['jpg','jpeg','png']
 
 @app.route('/')
 def index():
@@ -23,7 +24,14 @@ def uploader():
 
             file = request.files['profilePicture']
 
+            get_extension = os.path.splitext('file.filename')[1].lower()
+
+            if get_extension not in app.config['ALLOWED_EXTENSIONS']:
+
+                return 'file is not an image, <a href="upload">try again</a>'
+
             if file:
+
                 file.save(os.path.join(
 
                     app.config['upload_folder'], secure_filename(file.filename)
@@ -34,8 +42,7 @@ def uploader():
 
         except RequestEntityTooLarge:
 
-            return 'file size is more than 10MB limit \
-            <a href="upload" target="_blank">try again</a>'
+            return 'file size is more than 10MB limit <a href="upload">try again</a>'
 
     return render_template('upload.html')
 
