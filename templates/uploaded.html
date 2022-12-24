@@ -18,6 +18,12 @@
         {% endif %}
     {% endwith %}
 
+    <h1> Uploaded images </h1>
+    {% for images in image %}
+
+    <img src="{{ url_for('images', image=images) }}">
+
+    {% endfor %}
 
     <p>upload more pictures <a href='/upload'>here</a></p>
 </body>

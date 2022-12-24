@@ -11,7 +11,16 @@ app.config['ALLOWED_EXTENSIONS'] = ['.jpg','.jpeg','.png']
 
 @app.route('/')
 def index():
-    return render_template('uploaded.html')
+    images = os.listdir(app.config['upload_folder'])
+    pictures = []
+
+    for image in images:
+
+        get_extension = os.path.splitext(image)[1].lower()
+        if get_extension in app.config['ALLOWED_EXTENSIONS']:
+            pictures.append(image)
+
+    return render_template('uploaded.html', image=pictures)
     
 @app.route('/upload')
 def upload():       
@@ -39,13 +48,17 @@ def uploader():
                     
                     ))
                 flash ('uploaded succesfully')
-                return render_template('uploaded.html')
+                return redirect(url_for('index'))
 
         except RequestEntityTooLarge:
 
             return 'file size is more than 10MB limit <a href="upload">try again</a>'
 
     return render_template('upload.html')
+
+@app.route('/images/<image>')
+def images(image):
+    return send_from_directory(app.config['upload_folder'],image)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3565)
