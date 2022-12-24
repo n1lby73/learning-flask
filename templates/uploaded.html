@@ -20,9 +20,11 @@
 
     <h1> Uploaded images </h1>
     {% for images in image %}
+    <a href="{{ url_for('images', image=images) }}" target="_blank">
 
-    <img src="{{ url_for('images', image=images) }}">
+        <img src="{{ url_for('images', image=images) }}">
 
+    </a>
     {% endfor %}
 
     <p>upload more pictures <a href='/upload'>here</a></p>
