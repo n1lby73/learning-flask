@@ -4,12 +4,13 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_DEBUG'] = True
-app.config['MAIL_USERNAME'] = 'learningflaskemail'
-app.config['MAIL_PASSWORD'] = '3j6wYW2cjwsWiQX'
+app.config['MAIL_USERNAME'] = 'learningflaskemail@gmail.com'
+app.config['MAIL_PASSWORD'] = 'sgfdjggjgnmfehjk'
 app.config['MAIL_DEFAULT_SENDER'] = ('practice email sending', 'learningflaskemail@gmail.com')
+mail = Mail(app)
 
 @app.route('/')
 def index():
@@ -17,10 +18,10 @@ def index():
 
 @app.route('/email')
 def email():
-    msg = Message('Testing flask mail framework', recipients=['fwmyhdglyjabcgexuo@tmmwj.net'])
+    msg = Message('Testing', recipients=['wparlkvvdqljnvnkcl@tmmbt.com'])
     msg.body = 'did it work'
-
-    Mail.send(msg)
-
+    mail.send(msg)
+    return 'email sent'
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3565)
