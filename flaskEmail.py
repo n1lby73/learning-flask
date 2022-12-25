@@ -21,7 +21,7 @@ def email():
     msg = Message('Testing flask mail framework', recipients=['fwmyhdglyjabcgexuo@tmmwj.net'])
     msg.body = 'did it work'
 
-    Mail.send(msg)
+    mail.send(msg)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3565)
