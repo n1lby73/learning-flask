@@ -10,6 +10,7 @@ app.config['MAIL_DEBUG'] = True
 app.config['MAIL_USERNAME'] = 'learningflaskemail'
 app.config['MAIL_PASSWORD'] = '3j6wYW2cjwsWiQX'
 app.config['MAIL_DEFAULT_SENDER'] = ('practice email sending', 'learningflaskemail@gmail.com')
+mail = Mail(app)
 
 @app.route('/')
 def index():
