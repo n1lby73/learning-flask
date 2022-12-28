@@ -8,6 +8,8 @@
 </head>
 <body>
     <form method="post" action="">
+        {{ form.csrf_token() }}
+        {{ form.username() }}
         {{ form.csrf_token }}
         {{ form.userame }}
         {{ form.email }}

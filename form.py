@@ -4,12 +4,12 @@ from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 class regForm (FlaskForm):
 
-    username = StringField('username', validators=[InputRequired(), Length(min=5, max=20, message='username must be between 5-20 characters')])
+    username = StringField('username')
 
-    email = EmailField('email', validators=[InputRequired(), Email('Input a valid email')])
+    email = EmailField('email')
 
-    password = PasswordField("password", validators=[InputRequired(), Length(min=8, max=20, message='password must be  between 8-20 characters')])
+    password = PasswordField("password")
 
-    confirmpass = PasswordField("Confirm password", validators=[InputRequired(),EqualTo('password')])
+    confirmpass = PasswordField("Confirm password")
 
     reg = SubmitField("login")

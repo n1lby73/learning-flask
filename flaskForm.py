@@ -6,7 +6,7 @@ app.config['SECRET_KEY'] ="trying to work with wtforms"
 
 @app.route('/')
 def index():
-    form=regForm
+    form=regForm()
     return render_template('form-index.html',form=form)
 
 if __name__ == '__main__':
