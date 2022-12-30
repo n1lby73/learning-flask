@@ -17,13 +17,12 @@
         {{ form.email }}<br><br>
 
         {{ form.password.label }}:<br>
-        {{ form.password }}<br>
+        {{ form.password }}
+        <ul>
         {% for errors in form.password.errors %}
-            <ul>
-                <li> {{ errors }} <li>
-            </ul>
-        {% endfor %}<br><br>
-
+                <li style"color=red"> {{ errors }} <li>
+        {% endfor %}
+        </ul><br>
         {{ form.confirmpass.label }}:<br>
         {{ form.confirmpass }}<br>
         {% for errors in form.confirmpass.errors %}
