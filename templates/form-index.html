@@ -20,13 +20,13 @@
         {{ form.password }}<br>
         {% for errors in form.password.errors %}
             {{ errors }}
-        {% endfor %}
+        {% endfor %}<br><br>
 
         {{ form.confirmpass.label }}:<br>
         {{ form.confirmpass }}<br>
         {% for errors in form.confirmpass.errors %}
             {{ errors }}
-        {% endfor %} <br>
+        {% endfor %} <br><br>
 
         {{ form.reg }}
     </form>

@@ -8,8 +8,8 @@ class regForm (FlaskForm):
 
     email = EmailField('email', validators=[InputRequired(), Email('Input a valid email')]) 
 
-    password = PasswordField("password", validators=[InputRequired(), Length(min=8, max=20, message='password must be  between 8-20 characters')])
+    password = PasswordField("password", validators=[InputRequired(), EqualTo("confirmpass",message="password must be the same"), Length(min=8, max=20, message='password must be  between 8-20 characters')])
 
-    confirmpass = PasswordField("Confirm password", validators=[InputRequired(), EqualTo('password')])
+    confirmpass = PasswordField("Confirm password", validators=[InputRequired(), EqualTo('password', message="passwords must be same")])
 
     reg = SubmitField("login")
