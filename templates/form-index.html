@@ -19,7 +19,9 @@
         {{ form.password.label }}:<br>
         {{ form.password }}<br>
         {% for errors in form.password.errors %}
-            {{ errors }}
+            <ul>
+                <li> {{ errors }} <li>
+            </ul>
         {% endfor %}<br><br>
 
         {{ form.confirmpass.label }}:<br>
