@@ -18,16 +18,21 @@
 
         {{ form.password.label }}:<br>
         {{ form.password }}
+
         <ul>
-        {% for errors in form.password.errors %}
-                <li style="color:red;"> {{ errors }} </li>
-        {% endfor %}
-        </ul><br>
+            {% for errors in form.password.errors %}
+                <li style="color:red;">{{ errors }}</li>
+            {% endfor %}
+        </ul>
+
         {{ form.confirmpass.label }}:<br>
         {{ form.confirmpass }}<br>
-        {% for errors in form.confirmpass.errors %}
-            {{ errors }}
-        {% endfor %} <br><br>
+        
+        <ul>
+            {% for errors in form.password.errors %}
+                <li style="color:red;">{{ errors }}</li>
+            {% endfor %}
+        </ul>
 
         {{ form.reg }}
     </form>
