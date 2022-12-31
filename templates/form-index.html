@@ -20,7 +20,7 @@
         {{ form.password }}
         <ul>
         {% for errors in form.password.errors %}
-                <li style="color:red"> {{ errors }} <li>
+                <li style="color:red;"> {{ errors }} </li>
         {% endfor %}
         </ul><br>
         {{ form.confirmpass.label }}:<br>
