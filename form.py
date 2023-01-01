@@ -12,4 +12,4 @@ class regForm (FlaskForm):
 
     confirmpass = PasswordField("Confirm password", validators=[InputRequired(), EqualTo('password', message="passwords must be same")])
 
-    reg = SubmitField("login")
+    reg = SubmitField("sign up")
