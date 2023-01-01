@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] ="trying to work with wtforms"
 def index():
     form=regForm()
     if form.validate_on_submit():
-        return "few"
+        return "you are logged in"
     return render_template('form-index.html',form=form)
 
 if __name__ == '__main__':
