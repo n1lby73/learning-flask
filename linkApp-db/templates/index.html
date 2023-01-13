@@ -1,43 +1,41 @@
-<!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LogIn and SignUp Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
 </head>
-
 <body>
-    <div class="box">
-
-        <img src="icon.png">
-        <div class="page">
-            <div class="header">
-                <a id="login" class="active" href="#login">login</a>
-                <a id="signup" href="#signup">signup</a>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Registration</h1>
+            <div class="input-control">
+                <b><label for="username" style="color:skyblue">Username</label></b>
+                <input id="username" name="username" type="text">
+                <div class="error"></div>
             </div>
-            <div id="errorMsg"></div>
-            <div class="content">
-                <form class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
-                    <input type="text" name="name" id="logName" placeholder="Username">
-                    <input type="password" name="password" id="logPassword" placeholder="Password">
-                    <div id="check">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Remember me</label>
-                    </div>
-                    <br><br>
-                    <input type="submit" value="Login">
-                    <a href="#">Forgot Password?</a>
-                </form>
-                <form class="signup" name="signupForm" onsubmit="return validateSignupForm()" method="POST">
-                    <input type="email" name="email" id="signEmail" placeholder="Email">
-                    <input type="text" name="name" id="signName" placeholder="Username">
-                    <input type="password" name="password" id="signPassword" placeholder="Password"><br>
-                    <input type="submit" value="SignUp">
-                </form>
+            <div class="input-control">
+                <b><label for="email" style="color:skyblue">Email</label></b>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
             </div>
-        </div>
+            <div class="input-control">
+                <b><label for="password" style="color:skyblue">Password</label></b>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <b><label for="password2" style="color:skyblue">Confirm password</label></b>
+                <input id="password2"name="password2" type="password">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
 </body>
+</html>
