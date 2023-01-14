@@ -10,8 +10,10 @@ def index():
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        return f'hello {username}'
+        email = request.form['email']
+        password = request.form['password']
     else:
         return redirect(url_for('index'))
+        
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3565)
