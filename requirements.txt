@@ -4,3 +4,5 @@ python-dotenv
 flask-mail
 flask-WTF
 psycopg2-binary
+psycopg2
+email_validators
