@@ -12,6 +12,7 @@ def login():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
+        return "ye"
     else:
         return redirect(url_for('index'))
         
