@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}"/>
     <title>Flask Form</title>
 </head>
 <body>
-    <form method="post" action="">
-        {{ form.csrf_token }}
+    <div class="container">
+        <form method="post" action="">
+            <h1>Registration</h1>
 
-        {{ form.username.label }}: <br>
-        {{ form.username }}<br><br>
+            {{ form.csrf_token }}
 
-        {{ form.email.label }}:<br>
-        {{ form.email }}<br><br>
+            <div class="input-control">
 
-        {{ form.password.label }}:<br>
-        {{ form.password }}
+                {{ form.username.label }}
+                {{ form.username }}
 
-        <ul>
-            {% for errors in form.password.errors %}
-                <li style="color:red;">{{ errors }}</li>
-            {% endfor %}
-        </ul>
+            </div>
 
-        {{ form.confirmpass.label }}:<br>
-        {{ form.confirmpass }}<br>
+            <div class="input-control">
 
-        <ul>
-            {% for errors in form.password.errors %}
-                <li style="color:red;">{{ errors }}</li>
-            {% endfor %}
-        </ul>
+                {{ form.email.label }}
+                {{ form.email }}
 
-        {{ form.reg }}
-    </form>
+            </div>
+
+            <div class="input-control">
+
+                {{ form.password.label }}
+                {{ form.password }}
+
+            </div>
+
+            <ul>
+                {% for errors in form.password.errors %}
+                    <li style="color:red;">{{ errors }}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="input-control">
+
+                {{ form.confirmpass.label }}
+                {{ form.confirmpass }}
+
+            </div>
+
+            <ul>
+                {% for errors in form.password.errors %}
+                    <li style="color:red;">{{ errors }}</li>
+                {% endfor %}
+            </ul>
+
+            {{ form.reg }}
+        </form>
+    </div>
 </body>
 </html>
