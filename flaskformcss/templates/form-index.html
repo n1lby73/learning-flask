@@ -10,13 +10,15 @@
 <body>
     <div class="container">
         <form method="post" action="">
-            <h1>Registration</h1>
+            <h1><centre>Registration</centre></h1>
 
             {{ form.csrf_token }}
 
             <div class="input-control">
 
-                {{ form.username.label }}
+                <div class="text">
+                    {{ form.username.label }}
+                </div>
                 {{ form.username }}
 
             </div>
@@ -54,7 +56,12 @@
                 {% endfor %}
             </ul>
 
-            {{ form.reg }}
+            <div class="signup">
+
+                {{ form.reg }}
+
+            </div>
+
         </form>
     </div>
 </body>

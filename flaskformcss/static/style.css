@@ -8,7 +8,7 @@ body {background-color: rgb(169, 40, 40);
 
 .container {
     padding: 2rem;
-    background-color: white;
+    background-color: rgb(62, 8, 8);
 }
 
 #form {
@@ -25,7 +25,7 @@ body {background-color: rgb(169, 40, 40);
     text-align: center;
 }
 
-#form button {
+.signup {
     padding: 10px;
     margin-top: 10px;
     width: 100%;
@@ -35,6 +35,9 @@ body {background-color: rgb(169, 40, 40);
     border-radius: 4px;
 }
 
+.text {
+    color:skyblue;
+}
 .input-control {
     display: flex;
     flex-direction: column;
