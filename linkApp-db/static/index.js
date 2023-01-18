@@ -6,6 +6,7 @@ const password2 = document.getElementById('password2');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
+    console.log("I'm Here")
 
     validateInputs();
 });
