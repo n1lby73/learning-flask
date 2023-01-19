@@ -1,5 +1,5 @@
-body {background-color: rgb(169, 40, 40);
-
+body {
+    /* background-color: rgb(169, 40, 40); */
     margin: 5rem;
     /* color: white; */
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
@@ -8,7 +8,9 @@ body {background-color: rgb(169, 40, 40);
 
 .container {
     padding: 2rem;
-    background-color: rgb(62, 8, 8);
+    background-color: white;
+    border-radius: 4px;
+    /* background-color: rgb(62, 8, 8); */
 }
 
 #form {
@@ -20,7 +22,7 @@ body {background-color: rgb(169, 40, 40);
     font-size: 12px;
 }
 
-#form h1 {
+#h1 {
     color: #0f2027;
     text-align: center;
 }
@@ -30,13 +32,17 @@ body {background-color: rgb(169, 40, 40);
     margin-top: 10px;
     width: 100%;
     color: white;
+    background-color: whitesmoke;
     background-color: rgb(41, 57, 194);
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .text {
     color:skyblue;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 .input-control {
     display: flex;
@@ -45,11 +51,13 @@ body {background-color: rgb(169, 40, 40);
 
 .input-control input {
     border: 2px solid #f0f0f0;
+    background-color: #d8dcd6;
 	border-radius: 4px;
 	display: block;
 	font-size: 12px;
 	padding: 10px;
 	width: 100%;
+    /* margin-right: 20px; */
 }
 
 .input-control input:focus {

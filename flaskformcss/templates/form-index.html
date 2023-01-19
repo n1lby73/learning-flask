@@ -9,52 +9,67 @@
 </head>
 <body>
     <div class="container">
-        <form method="post" action="">
-            <h1><centre>Registration</centre></h1>
+        <form id="form" method="post" action="">
 
+            <h1 id="h1">Registration</h1>
+                
             {{ form.csrf_token }}
 
             <div class="input-control">
 
                 <div class="text">
+
                     {{ form.username.label }}
+
                 </div>
+
                 {{ form.username }}
 
             </div>
 
             <div class="input-control">
 
-                {{ form.email.label }}
+                <div class="text">
+                    
+                    {{ form.email.label }}
+
+                </div>
+
                 {{ form.email }}
 
             </div>
 
             <div class="input-control">
 
-                {{ form.password.label }}
+                <div class="text">
+                    
+                    {{ form.password.label }}
+
+                </div>
+
                 {{ form.password }}
 
             </div>
 
-            <ul>
-                {% for errors in form.password.errors %}
-                    <li style="color:red;">{{ errors }}</li>
-                {% endfor %}
-            </ul>
+            {% for errors in form.password.errors %}
+                {{ errors }}
+            {% endfor %}
 
             <div class="input-control">
+                
+                <div class="text">
 
-                {{ form.confirmpass.label }}
+                    {{ form.confirmpass.label }}
+                
+                </div>
+
                 {{ form.confirmpass }}
 
             </div>
 
-            <ul>
-                {% for errors in form.password.errors %}
-                    <li style="color:red;">{{ errors }}</li>
-                {% endfor %}
-            </ul>
+            {% for errors in form.password.errors %}
+                {{ errors }}
+            {% endfor %}
 
             <div class="signup">
 
