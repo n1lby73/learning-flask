@@ -7,15 +7,18 @@ body {
 }
 
 .container {
-    padding: 2rem;
+    margin: 2rem;
     background-color: white;
     border-radius: 4px;
+    align-content: center;
+    /* align-items: center; */
+    /* justify-items: center; */
     /* background-color: rgb(62, 8, 8); */
 }
 
 #form {
     width: 300px;
-    margin: 20vh auto 0 auto;
+    margin: 250px auto 0 auto;
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 4px;
@@ -28,12 +31,12 @@ body {
 }
 
 .signup {
-    padding: 10px;
-    margin-top: 10px;
+    padding: 1rem 5rem;
+    margin-top: 20px;
     width: 100%;
     color: white;
-    background-color: whitesmoke;
     background-color: rgb(41, 57, 194);
+    font-size: large;
     border: none;
     border-radius: 10px;
     text-align: center;
@@ -41,6 +44,7 @@ body {
 
 .text {
     color:skyblue;
+    font-size: medium;
     margin-top: 10px;
     margin-bottom: 5px;
 }
@@ -56,8 +60,7 @@ body {
 	display: block;
 	font-size: 12px;
 	padding: 10px;
-	width: 100%;
-    /* margin-right: 20px; */
+	width: 90%;
 }
 
 .input-control input:focus {
@@ -68,7 +71,7 @@ body {
     border-color: #09c372;
 }
 
-.input-control.error input {
+.input-control.error {
     border-color: #ff3860;
 }
 

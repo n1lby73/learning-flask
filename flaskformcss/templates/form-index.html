@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}"/>
-    <title>Flask Form</title>
+    <title>Sign up page</title>
 </head>
 <body>
     <div class="container">
@@ -52,7 +52,7 @@
             </div>
 
             {% for errors in form.password.errors %}
-                {{ errors }}
+                {{ errors (class="input-control error") }}
             {% endfor %}
 
             <div class="input-control">
@@ -71,11 +71,11 @@
                 {{ errors }}
             {% endfor %}
 
-            <div class="signup">
+            <!-- <div class="signup"> -->
 
-                {{ form.reg }}
+                {{ form.reg(class="signup") }}
 
-            </div>
+            <!-- </div> -->
 
         </form>
     </div>
