@@ -51,9 +51,13 @@
 
             </div>
 
-            {% for errors in form.password.errors %}
-                {{ errors (class="input-control error") }}
-            {% endfor %}
+            <div class="error">
+
+                {% for errors in form.password.errors %}
+                    {{ errors }}
+                {% endfor %}
+
+            </div>
 
             <div class="input-control">
                 
@@ -67,15 +71,15 @@
 
             </div>
 
-            {% for errors in form.password.errors %}
-                {{ errors }}
-            {% endfor %}
+            <div class="error">
 
-            <!-- <div class="signup"> -->
+                {% for errors in form.confirmpass.errors %}
+                    {{ errors }}
+                {% endfor %}
 
-                {{ form.reg(class="signup") }}
+            </div>
 
-            <!-- </div> -->
+            {{ form.reg(class="signup") }}
 
         </form>
     </div>
