@@ -8,80 +8,78 @@
     <title>Sign up page</title>
 </head>
 <body>
-    <div class="container">
-        <form id="form" method="post" action="">
-
-            <h1 id="h1">Registration</h1>
-                
-            {{ form.csrf_token }}
-
-            <div class="input-control">
-
-                <div class="text">
-
-                    {{ form.username.label }}
-
+    <div class="register__con">
+        <div class="container">
+            <form id="form" method="post" action="">
+        
+                <h1 id="h1">Registration</h1>
+        
+                {{ form.csrf_token }}
+        
+                <div class="input-control">
+        
+                    <div class="text">
+        
+                        {{ form.username.label }}
+        
+                    </div>
+        
+                    {{ form.username }}
+        
                 </div>
-
-                {{ form.username }}
-
-            </div>
-
-            <div class="input-control">
-
-                <div class="text">
-                    
-                    {{ form.email.label }}
-
+        
+                <div class="input-control">
+        
+                    <div class="text">
+        
+                        {{ form.email.label }}
+        
+                    </div>
+        
+                    {{ form.email }}
+        
                 </div>
-
-                {{ form.email }}
-
-            </div>
-
-            <div class="input-control">
-
-                <div class="text">
-                    
-                    {{ form.password.label }}
-
+        
+                <div class="input-control">
+        
+                    <div class="text">
+        
+                        {{ form.password.label }}
+        
+                    </div>
+        
+                    {{ form.password }}
+        
                 </div>
-
-                {{ form.password }}
-
-            </div>
-
-            <div class="error">
-
+        
                 {% for errors in form.password.errors %}
-                    {{ errors }}
+                {{ errors }}
                 {% endfor %}
-
-            </div>
-
-            <div class="input-control">
-                
-                <div class="text">
-
-                    {{ form.confirmpass.label }}
-                
+        
+                <div class="input-control">
+        
+                    <div class="text">
+        
+                        {{ form.confirmpass.label }}
+        
+                    </div>
+        
+                    {{ form.confirmpass }}
+        
                 </div>
-
-                {{ form.confirmpass }}
-
-            </div>
-
-            <div class="error">
-
-                {% for errors in form.confirmpass.errors %}
-                    {{ errors }}
+        
+                {% for errors in form.password.errors %}
+                {{ errors }}
                 {% endfor %}
-
-            </div>
-
-            {{ form.reg(class="signup") }}
-
-        </form>
+        
+                <!-- <div class="signup"> -->
+        
+                {{ form.reg(class="signup") }}
+        
+                <!-- </div> -->
+        
+            </form>
+        </div>
     </div>
 </body>
 </html>
