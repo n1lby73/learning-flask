@@ -10,6 +10,19 @@ const form = document.getElementById('forms');
 form.addEventListener('submit', e => {
     e.preventDefault();
     validateInputs();
+    fetch('/login', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+        if (response.status === 200) {
+            window.location.replace("/login");
+        } else {
+            window.location.replace("/error");
+        }
+    })
+    // location.href = '/login';
     // Perform other actions, such as validation or sending data to server
 });
 
