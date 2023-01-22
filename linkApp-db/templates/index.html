@@ -1,4 +1,4 @@
-<html lang="en">
+<!doctype html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    <script defer src="{{ url_for('static', filename='index.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}"/>
+    <script defer src="{{ url_for('static', filename='/scripts/index.js') }}"></script>
 </head>
 <body>
     <div class="container">
@@ -28,7 +28,7 @@
             </div>
             <div class="input-control">
                 <b><label for="password" style="color:skyblue">Password</label></b>
-                <input id="password"name="password" type="password">
+                <input id="password"name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -36,7 +36,7 @@
                 <input id="password2"name="password2" type="password">
                 <div class="error"></div>
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit" id="myButton">Sign Up</button>
         </form>
     </div>
 </body>

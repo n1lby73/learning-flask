@@ -1,15 +1,37 @@
-const form = document.getElementById('form');
+const button = document.getElementById('myButton');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+const form = document.getElementById('forms');
+
+// Add submit event listener to form
 form.addEventListener('submit', e => {
     e.preventDefault();
-    console.log("I'm Here")
-
     validateInputs();
+    fetch('/login', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+        if (response.status === 200) {
+            window.location.replace("/login");
+        } else {
+            window.location.replace("/error");
+        }
+    })
+    // location.href = '/login';
+    // Perform other actions, such as validation or sending data to server
 });
+
+// button.addEventListener('click', () => {
+
+//     // e.preventDefault();
+//     validateInputs();
+
+// });
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -17,7 +39,7 @@ const setError = (element, message) => {
 
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
-    inputControl.classList.remove('success')
+    inputControl.classList.remove('If the element with the ID "form" exists in the HTMLsuccess')
 }
 
 const setSuccess = element => {
