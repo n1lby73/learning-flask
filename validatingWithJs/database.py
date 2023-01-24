@@ -6,13 +6,20 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/success')
+def success():
+    return render_template('success.html')
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        email = request.form['email']
-        password = request.form['password']
-        return "ye"
+        data = request.get_json()
+
+        username = data["username"]
+        email = data["email"]
+        password = data["password"]
+
+        return "post request"
     else:
         return redirect(url_for('index'))
         

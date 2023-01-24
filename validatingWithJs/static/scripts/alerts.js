@@ -6,32 +6,11 @@ const password2 = document.getElementById('password2');
 
 const form = document.getElementById('forms');
 
-// Add submit event listener to form
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
     validateInputs();
-    fetch('/login', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
-    })
-    .then(response => {
-        if (response.status === 200) {
-            window.location.replace("/login");
-        } else {
-            window.location.replace("/error");
-        }
-    })
-    // location.href = '/login';
-    // Perform other actions, such as validation or sending data to server
+
 });
-
-// button.addEventListener('click', () => {
-
-//     // e.preventDefault();
-//     validateInputs();
-
-// });
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -63,33 +42,93 @@ const validateInputs = () => {
     const password2Value = password2.value.trim();
 
     if(usernameValue === '') {
+
         setError(username, 'Username is required');
-    } else {
-        setSuccess(username);
+
     }
 
-    if(emailValue === '') {
+    else if(emailValue === '') {
         setError(email, 'Email is required');
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address');
-    } else {
-        setSuccess(email);
+
+        if (!isValidEmail(emailValue)) {
+            setError(email, 'Provide a valid email address');
+        } else {
+            setSuccess(email);
+        }
     }
 
-    if(passwordValue === '') {
+    else if(passwordValue === '') {
         setError(password, 'Password is required');
-    } else if (passwordValue.length < 8 ) {
-        setError(password, 'Password must be at least 8 character.')
-    } else {
-        setSuccess(password);
-    }
 
-    if(password2Value === '') {
+        if (passwordValue.length < 8 ) {
+            setError(password, 'Password must be at least 8 character.')
+        } else {
+            setSuccess(password);
+        }
+    } 
+
+    else if(password2Value === '') {
         setError(password2, 'Please confirm your password');
-    } else if (password2Value !== passwordValue) {
-        setError(password2, "Passwords doesn't match");
-    } else {
-        setSuccess(password2);
+
+        if (password2Value !== passwordValue) {
+            setError(password2, "Passwords doesn't match");
+        } else {
+            setSuccess(password2);
+        }
     }
 
+    else {
+
+        var data = { 
+            
+            "username": usernameValue,
+            "email": emailValue,
+            "password":passwordValue,
+            "password2":password2Value,
+        
+        };
+
+        fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(response => {
+            if(response.ok) {
+                console.log(response.status)
+                console.log("Request succeeded");
+                // return response.json();
+            }else{
+                throw new Error('Error: ' + response.status);
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+        
+        
+        // fetch('/login',
+        // {
+
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: { 'Content-Type': 'application/json' }
+            
+        // }
+        // ).then(response => {
+        //         console.log(response.status)
+        //         if (response.ok) {
+        //             // return response.json();
+        //             // console.log(response.status)
+        //             console.log("Request succeeded");
+        //             window.location.href='/login'
+        //         } 
+                
+        //         else {
+        //             console.log("Request failed");
+        //         }
+        //     })
+            
+        //     .catch(error => console.error('Error:', error));
+
+        // console.log("reached here");
+    }
 };
