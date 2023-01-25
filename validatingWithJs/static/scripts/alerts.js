@@ -1,5 +1,13 @@
-const button = document.getElementById('myButton');
+function validateUsername() {
+    const pattern = /^[a-zA-Z][a-zA-Z0-9_]{5,20}$/;
+    if (!username.value.match(pattern)) {
+        setError(username, "Username must start with a letter, contain only letters, numbers, and the underscore character, and be between 5 and 20 characters long.");
+    }
+}
+
 const username = document.getElementById('username');
+username.onblur = validateUsername;
+
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
@@ -92,17 +100,68 @@ const validateInputs = () => {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
-        }).then(response => {
-            if(response.ok) {
-                console.log(response.status)
+        })
+        .then(response => {
+            if (response.ok){
+                console.log(response.status);
                 console.log("Request succeeded");
-                // return response.json();
-            }else{
-                throw new Error('Error: ' + response.status);
+                return response.json();
             }
-        }).catch(error => {
-            console.error(error);
-        });
+
+            else{
+
+                console.log("error sending data");
+            }
+        })
+        .then(data => {
+            if (data.success === true){
+                console.log("succ");
+                window.location.replace('/success');
+            }
+
+            else{
+                
+                console.log(data);
+                console.log("i won't redirect");
+            }
+        })
+        .catch(error => console.error(error));
+
+// How to check response and data using .then
+// Response { type: "basic", url: "http://127.0.0.1:3565/login", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(5), body: ReadableStream, bodyUsed: false } meanning
+        // fetch('/login', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: { 'Content-Type': 'application/json' }
+        // }).then(response => {
+        //     if(response.ok) {
+
+        //         // if (data.success === true) {
+        //         //     window.location.href = '/success';
+        //         // } else {
+        //         //     console.log("Error sending data");
+        //         // }
+        //         console.log(response.status)
+        //         console.log("Request succeeded");
+        //         // window.location.replace('login')
+        //         // window.location.href='/login'
+        //         // return response.json();
+        //     }else{
+        //         console.log(response.status)
+        //         throw new Error('Error: ' + response.status);
+        //     }
+        // }).then(data => {
+
+        //     if (data.success === true) {
+        //             console.log("true")
+        //             window.location.href = '/success';
+        //         } else {
+        //             console.log("Error sending data");
+        //         }
+
+        // }).catch(error => {
+        //     console.error(error);
+        // });
         
         
         // fetch('/login',
