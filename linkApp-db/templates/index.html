@@ -1,4 +1,4 @@
-<!doctype html lang="en">
+<!doctype html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index-style.css') }}"/>
     <script defer src="{{ url_for('static', filename='/scripts/index.js') }}"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
 </head>
 <body>
     <div class="container">
-        <form id="forms" action="login" method="post">
+        <form id="forms" action="/login" method="POST">
             <h1>Registration</h1>
             <div class="input-control">
                 <b><label for="username" style="color:skyblue">Username</label></b>
-                <input id="username" name="username" type="text">
+                <input id="username" name="username" type="text" >
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -39,5 +41,6 @@
             <button type="submit" id="myButton">Sign Up</button>
         </form>
     </div>
+    <!-- <script defer src="{{ url_for('static', filename='/scripts/alerts.js') }}"></script> -->
 </body>
 </html>

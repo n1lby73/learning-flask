@@ -127,5 +127,67 @@ const validateInputs = () => {
         })
         .catch(error => console.error(error));
 
+// How to check response and data using .then
+// Response { type: "basic", url: "http://127.0.0.1:3565/login", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(5), body: ReadableStream, bodyUsed: false } meanning
+        // fetch('/login', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: { 'Content-Type': 'application/json' }
+        // }).then(response => {
+        //     if(response.ok) {
+
+        //         // if (data.success === true) {
+        //         //     window.location.href = '/success';
+        //         // } else {
+        //         //     console.log("Error sending data");
+        //         // }
+        //         console.log(response.status)
+        //         console.log("Request succeeded");
+        //         // window.location.replace('login')
+        //         // window.location.href='/login'
+        //         // return response.json();
+        //     }else{
+        //         console.log(response.status)
+        //         throw new Error('Error: ' + response.status);
+        //     }
+        // }).then(data => {
+
+        //     if (data.success === true) {
+        //             console.log("true")
+        //             window.location.href = '/success';
+        //         } else {
+        //             console.log("Error sending data");
+        //         }
+
+        // }).catch(error => {
+        //     console.error(error);
+        // });
+        
+        
+        // fetch('/login',
+        // {
+
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: { 'Content-Type': 'application/json' }
+            
+        // }
+        // ).then(response => {
+        //         console.log(response.status)
+        //         if (response.ok) {
+        //             // return response.json();
+        //             // console.log(response.status)
+        //             console.log("Request succeeded");
+        //             window.location.href='/login'
+        //         } 
+                
+        //         else {
+        //             console.log("Request failed");
+        //         }
+        //     })
+            
+        //     .catch(error => console.error('Error:', error));
+
+        // console.log("reached here");
     }
 };
