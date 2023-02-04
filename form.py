@@ -3,7 +3,7 @@ from wtforms import StringField, EmailField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 class regForm (FlaskForm):
-
+    
     username = StringField('username', validators=[InputRequired(), Length(min=5, max=20, message='username must be between 5-20 characters')])
 
     email = EmailField('email', validators=[InputRequired(), Email('Input a valid email')]) 
