@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/afca8e3746.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/success-style.css')}}" />
+    <title>Logged in</title>
+</head>
+
+<body>
+    <header class="showcase">
+        <div class="showcase-top">
+            <img src="{{ url_for('static', filename='/images/success/logo1.png')}}" alt="Netflix">
+            <a href="#" class="btn btn-rounded">Sign In</a>
+        </div>
+        <div class="showcase-content">
+            <h3>You have successfully logged in</h3>
+        </div>
+    </header>
+    <script src="{{ url_for('static', filename ='/scripts/success-index.js')}}"></script>
+</body>
+
+</html>
